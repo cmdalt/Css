@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.content {
+    margin: 20px auto;
+    width: 90vw;
+}
+h1,p {
+    margin-bottom: 10vh;
+    text-align: justify;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1rm;
+    grid-gap: 20px;
+    grid-template-areas: "one two three";
+}
+main .one {
+    grid-area: one;
+}
+main .two {
+    grid-area: two;
+}
+main .three {
+    grid-area: three;
+}
+.column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0.8;
+    font-size: 2rem;
+    min-height: 40vh;
+    background: linear-gradient(45deg, rgba(2,0,36,1) 10%, rgba(9,9,121,1) 80%);
+}
+@media (max-width: 1200px) and (min-width:900px){
+    h1 {
+        color: red;
+    }
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "three two"
+        "one one";
+    }
+}
+@media (max-width: 700px){
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "two"
+        "three"
+        "one";
+    }
+}
+
+@media (orientation: landscape){
+    h1 {
+        display: none;
+    }
+    p {
+        display: red;
+    }
+}
+
+@media print {
+    p {
+        color: orange;
+    }
+}
